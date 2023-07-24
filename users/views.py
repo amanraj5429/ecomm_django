@@ -28,7 +28,8 @@ def login_api(request):
             'username': user.username,
             'email':user.email
         },
-        'token': token
+        'token': token,
+        'message': 'Logged in'
     
     })
 
@@ -63,7 +64,8 @@ def register_api(request):
             "first_name": user.first_name,
             "last_name": user.last_name,
         },
-        'token': token
+        'token': token,
+        'message': 'Success'
     })
 
 @api_view(['POST'])
