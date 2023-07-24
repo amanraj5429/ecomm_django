@@ -94,18 +94,18 @@ def getProducts(request):
 def product_gud(request, pk):
 
     try:
-        # product = Product.objects.get(id=pk)
-        product_id = request.GET.get(id=pk)
-        if cache.get(product_id):
-            print("data from Caching")
-            product = Product.objects.get(product_id)
-        else:
-            if product_id:
-                # prod = Product.objects.get(id=pk)
-                product = Product.objects.get(product_id)
-                cache.set(product_id, pk )
-            else:
-                product=Product.objects.get(id=pk)
+        product = Product.objects.get(id=pk)
+        # product_id = request.GET.get(id=pk)
+        # if cache.get(product_id):
+        #     print("data from Caching")
+        #     product = Product.objects.get(product_id)
+        # else:
+        #     if product_id:
+        #         # prod = Product.objects.get(id=pk)
+        #         product = Product.objects.get(product_id)
+        #         cache.set(product_id, pk )
+        #     else:
+        #         product=Product.objects.get(id=pk)
 
 
     except Product.DoesNotExist:
